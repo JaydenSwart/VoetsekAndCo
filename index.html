@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graphic Tee Landing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Graphic Tee Co.</h1>
+    <p>Discover unique graphic tees. Express yourself.</p>
+    <button class="cta" onclick="location.href='home.html'">Enter Shop</button>
+    <div class="loader">Auto-loading in <span id="count" aria-live="polite">10</span> seconds</div>
+  </div>
+  <script>
+    // Countdown from 10 to 0 and then redirect to home.html
+    (function(){
+      var count = 10;
+      var el = document.getElementById('count');
+      el.textContent = count;
+      var interval = setInterval(function(){
+        count--;
+        if(count >= 0) el.textContent = count;
+        if(count <= 0){
+          clearInterval(interval);
+          location.href = 'home.html';
+        }
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>
